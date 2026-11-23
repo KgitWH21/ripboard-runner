@@ -1,0 +1,210 @@
+    <!-- TITLE SCREEN (V3) -->
+    <div id="title-screen" class="overlay">
+      <div class="title-wash"></div>
+      <div class="title-inner">
+        <div id="title-logo">
+          <div class="k-title-svg" data-kufic="RIPBOARD|RUNNER"></div>
+          <div class="tag">Yuba City, 2062 &nbsp;•&nbsp; A Cereus &amp; Limnic Race</div>
+        </div>
+        <div id="title-menu" class="k-frame k-card">
+          <button id="btn-continue" class="k-btn" type="button">New Story</button>
+          <div class="k-row">
+            <button id="btn-stages" class="k-btn ghost" type="button">Stages</button>
+            <button id="btn-speedrun" class="k-btn ghost" type="button">Speedrun</button>
+            <button id="start-btn" class="k-btn ghost" type="button">Free Ride 5:00</button>
+          </div>
+          <button id="btn-bonus" class="k-btn ghost bonus-btn hidden" type="button">★ Bonus: San Francisco</button>
+          <div class="k-row">
+            <button id="btn-gallery" class="k-btn ghost" type="button">Lore</button>
+            <button id="btn-leaderboard" class="k-btn ghost" type="button">Leaderboard</button>
+            <button id="btn-settings" class="k-btn ghost" type="button">Settings</button>
+          </div>
+          <div class="k-hint keys">Enter: start • M: music • N: next track • P / Esc: pause</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUTSCENE -->
+    <div id="cutscene" class="overlay k-overlay hidden">
+      <button id="cs-skip" class="k-btn ghost" type="button">Skip ▸▸</button>
+      <div class="cs-wrap">
+        <div class="cs-panel"><img id="cs-img" alt="" /></div>
+        <div class="cs-box k-frame" id="cs-box" role="button" tabindex="0" aria-label="Next line">
+          <div class="cs-speaker" id="cs-speaker"></div>
+          <div class="cs-text" id="cs-text" aria-live="polite"></div>
+          <div class="cs-next">Tap / Space ▸</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE INTRO CARD -->
+    <div id="stage-intro" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-eyebrow" id="si-eyebrow">Stage 1 of 5</div>
+        <div class="k-title-svg" id="si-kufic"></div>
+        <div class="stage-name-plain" id="si-name"></div>
+        <div class="stage-place" id="si-place"></div>
+        <div class="si-art" id="si-art"></div>
+        <div class="medal-line" id="si-medals"></div>
+        <div class="k-sub" id="si-taunt"></div>
+        <button id="si-go" class="k-btn" type="button">Rip It</button>
+        <div class="k-hint keys">Enter / Space to start</div>
+      </div>
+    </div>
+
+    <!-- STAGE CLEAR / MEDAL SCREEN -->
+    <div id="stage-clear" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-title-svg" data-kufic="STAGE CLEAR"></div>
+        <div class="medal big" id="sc-medal"></div>
+        <div class="clear-medal-name" id="sc-medal-name"></div>
+        <div class="clear-time" id="sc-time">0:00.0</div>
+        <div class="medal-line" id="sc-thresholds"></div>
+        <div class="clear-facts" id="sc-facts"></div>
+        <div class="name-row"><label for="sc-name">Leaderboard name</label><input id="sc-name" maxlength="12" autocomplete="off" /></div>
+        <div class="story-beat" id="sc-beat"></div>
+        <button id="sc-next" class="k-btn" type="button">Next Stage</button>
+        <div class="k-row">
+          <button id="sc-retry" class="k-btn ghost small" type="button">Retry</button>
+          <button id="sc-title" class="k-btn ghost small" type="button">Title</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGN WIPEOUT -->
+    <div id="fail-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-eyebrow">Board Disengaged</div>
+        <div class="stage-name-plain">"Wow, crazy wipeout. You okay?"</div>
+        <div class="clear-facts" id="fail-facts"></div>
+        <button id="fail-retry" class="k-btn" type="button">Ride Again</button>
+        <div class="k-row">
+          <button id="fail-stages" class="k-btn ghost small" type="button">Stages</button>
+          <button id="fail-title" class="k-btn ghost small" type="button">Title</button>
+        </div>
+        <div class="k-hint keys">Enter to retry</div>
+      </div>
+    </div>
+
+    <!-- SPEEDRUN RESULTS -->
+    <div id="sr-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card wide">
+        <div class="k-title-svg" data-kufic="SPEEDRUN"></div>
+        <div class="clear-time" id="sr-total">0:00.0</div>
+        <div class="clear-medal-name" id="sr-pb"></div>
+        <table class="lb-table sr-table" id="sr-table"></table>
+        <div class="clear-facts" id="sr-facts"></div>
+        <div class="name-row"><label for="sr-name">Leaderboard name</label><input id="sr-name" maxlength="12" autocomplete="off" /></div>
+        <button id="sr-again" class="k-btn" type="button">Run Again</button>
+        <div class="k-row">
+          <button id="sr-lb" class="k-btn ghost small" type="button">Leaderboard</button>
+          <button id="sr-title" class="k-btn ghost small" type="button">Title</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BONUS UNLOCKED -->
+    <div id="bonus-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-eyebrow">You finished the main run</div>
+        <div class="k-title-svg" data-kufic="BONUS UNLOCKED"></div>
+        <div class="si-art bonus-art" id="bonus-art"></div>
+        <div class="stage-name-plain">San Francisco Streets</div>
+        <div class="stage-place">Twilight. Bomb the hills, hop the cable car tracks, dodge the cable cars, weave the switchback. Golden Gate in the fog.</div>
+        <button id="bonus-go" class="k-btn" type="button">Ride It Now</button>
+        <button id="bonus-later" class="k-btn ghost small" type="button">Later</button>
+        <div class="k-hint">Saved on this device. Find it on the title screen and in Stages.</div>
+      </div>
+    </div>
+
+    <!-- PAUSE MENU -->
+    <div id="pause-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-title-svg" data-kufic="PAUSED"></div>
+        <div class="k-eyebrow" id="pause-where"></div>
+        <button id="pause-resume" class="k-btn" type="button">Resume</button>
+        <button id="pause-restart" class="k-btn ghost" type="button">Restart</button>
+        <div class="settings-row"><label for="track-select-pause">Music</label><select id="track-select-pause" class="track-select" aria-label="Choose music track"></select></div>
+        <button class="boost-side-btn" type="button">Boost button: Right</button>
+        <button id="pause-quit" class="k-btn ghost" type="button">Quit to Title</button>
+        <div class="k-hint keys">P / Esc: resume • M: music • N: next track</div>
+      </div>
+    </div>
+
+    <!-- STAGE SELECT -->
+    <div id="stages-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card wide">
+        <div class="k-title-svg" data-kufic="STAGES"></div>
+        <div class="k-list" id="stage-list"></div>
+        <button class="k-btn ghost small js-back" type="button">Back</button>
+      </div>
+    </div>
+
+    <!-- LORE GALLERY -->
+    <div id="gallery-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card wide">
+        <div class="k-title-svg" data-kufic="LORE"></div>
+        <div class="k-sub">One hidden star per stage. Jump for it. Each unlocks a scrap from Chapters 1-4.</div>
+        <div class="k-list" id="lore-list"></div>
+        <button class="k-btn ghost small js-back" type="button">Back</button>
+      </div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div id="lb-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card wide">
+        <div class="k-title-svg" data-kufic="BEST TIMES"></div>
+        <div id="lb-body"></div>
+        <button class="k-btn ghost small js-back" type="button">Back</button>
+      </div>
+    </div>
+
+    <!-- SETTINGS / HOW TO PLAY -->
+    <div id="settings-screen" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-title-svg" data-kufic="SETTINGS"></div>
+        <div class="settings-row"><label for="track-select-settings">Music</label><select id="track-select-settings" class="track-select" aria-label="Choose music track"></select></div>
+        <button class="boost-side-btn" type="button">Boost button: Right</button>
+        <div class="controls-box" style="margin-top:10px">
+          <div><strong>Switch Lanes:</strong> Arrow Left / Right, A / D, or Swipe Left / Right</div>
+          <div><strong>Jump (clears holes, walkers, cyclists, trucks):</strong> Up, W, Space, or Swipe Up</div>
+          <div><strong>Power Levels:</strong> every cell fills the meter. 4, 6, 8, 10... cells per level. Each level raises max speed and boost. A wipeout drops one level.</div>
+          <div><strong>Levcer Boost (5 Cells):</strong> Shift, E, Down, Swipe Down, or Tap Boost</div>
+          <div><strong>Story:</strong> The clock never stops, even when you wipe out. Gold needs a clean run. Beat Harpreet to the line. Jump for the hidden star.</div>
+          <div><strong>Speedrun:</strong> all five stages back to back on one clock, no story, with splits.</div>
+          <div class="hint-keys"><strong>Keys:</strong> M music • N next track • P / Esc pause</div>
+        </div>
+        <button id="btn-reset-save" class="k-btn ghost small" type="button">Reset Save</button>
+        <button class="k-btn ghost small js-back" type="button">Back</button>
+      </div>
+    </div>
+
+    <!-- CREDITS -->
+    <div id="credits" class="overlay hidden">
+      <div class="cr-wash"></div>
+      <button id="cr-skip" class="k-btn ghost" type="button">Skip ▸▸</button>
+      <div class="cr-roll" id="cr-roll">
+        <div class="k-title-svg" data-kufic="RIPBOARD|RUNNER"></div>
+        <h4>Story &amp; World</h4><p>Cereus &amp; Limnic<br />by Keith Hayden</p>
+        <h4>Starring</h4><p>Jinhua Ma<br />Harpreet</p>
+        <h4>Music</h4><p>From the Cereus &amp; Limnic soundtrack by Keith Hayden<br />Yuba City 2062 • Yuba City 2062 (Winter - Day &amp; Night Mix) • Cereus &amp; Limnic Battle Theme • Cereus Crew Work • Evolution's Destiny • Those Who Fight Willingly and Bravely • The Story So Far</p>
+        <h4>Game</h4><p>Ripboard Runner<br />HAC Studios</p>
+        <h4>Words Drawn From</h4><p>Cereus &amp; Limnic: Definitive Edition<br />Chapters 1-4</p>
+        <h4>&nbsp;</h4><p>Thanks for riding.</p>
+      </div>
+    </div>
+
+    <!-- END CARD -->
+    <div id="endcard" class="overlay k-overlay hidden">
+      <div class="k-frame k-card">
+        <div class="k-eyebrow">The race continues in the book</div>
+        <div class="k-title-svg" data-kufic="CEREUS|LIMNIC"></div>
+        <div class="k-sub">In the game, you choose how this race ends. In the novel, it ends another way. Chapter 4 tells it, and the story only gets bigger from there.</div>
+        <a class="k-btn" id="endcard-link" href="https://keithhayden.net/cereus-limnic-series/" target="_blank" rel="noopener noreferrer" style="text-decoration:none">Read Cereus &amp; Limnic</a>
+        <div class="k-row">
+          <button id="endcard-lb" class="k-btn ghost small" type="button">Leaderboard</button>
+          <button id="endcard-title" class="k-btn ghost small" type="button">Title</button>
+        </div>
+      </div>
+    </div>
+
